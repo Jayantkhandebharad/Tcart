@@ -27,7 +27,7 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #0d6326;
+  background-color: #000000;
 }
 main {
   grid-area: main;
@@ -96,10 +96,18 @@ header a {
   padding: 1rem;
 }
 a.brand {
-  color: #ffffff;
-  font-size: 3rem;
-  font-weight: bold;
+    float: left;
+    font-size: 2em;
+    display: initial;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 2000;
+    padding: 3px 0;
+    border: none;
+	  font-family: 'Lobster', cursive;
 }
+
 .badge {
   background-color: #f02020;
   color: #ffffff;
@@ -256,4 +264,38 @@ img.large {
 .checkout-steps > div.active {
   border-top-color: #59eb05;
   color: #59eb05;
+}
+
+/*         footer               */
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #f8f8f8;
+  height: max-content;
+  flex-wrap: wrap;
+}
+
+.footer-logo{
+  font-size:30px;
+  font-weight: bold;
+  margin: 0px;
+}
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+#madeBy{
+  margin: 0px;
+  font-size: 20px;
+}
+
+#Name-list{
+  text-align: center;
 }

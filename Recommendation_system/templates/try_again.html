@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class=try-main>
+<div class="container py-2 mx-auto my-50 h-10 text-center" style="margin: 9rem;border:2px solid black" id="tryag-body">
+      <div id="tryag">
+        <p>Sorry We could not process your request . Please try again....</p>
+        <a href="{{ url_for('home') }}">
+          <button type="submit" class="btn" style="
+          border-radius:50px;
+          background: rgb(251,0,0);
+          color: black;
+          box-shadow:2px 3px 10px black;
+          font-weight: bold;
+          margin: 1rem;
+          width:100%">
+            Try again
+          </button>
+        </a>
+      </div>
+</div>
+</div>
+{% endblock %}

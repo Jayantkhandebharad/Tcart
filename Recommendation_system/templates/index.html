@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<section class="blog py-5">
+	<!-- <div class="main-body"> -->
+	<div class="container">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> Get Recommendations</h3>
+		<div class="main-body">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5"  id="form-left">
+					<!-- <div class="blog-info">
+						<h4>Plants</h4>
+						<p class="mt-2"> Get recommendation about the plants which will best suit to your environment.</p>
+					</div> -->
+					<h2 id="plants">Plants</h2>
+					<p id="desc"> Get recommendation about the plants which will best suit to your environment.</p>
+			</div>
+			<!--Form Section-->
+			<br /><br />
+			<div
+			  style="
+				width: 800px;
+				height: 40rem;
+				margin: 0px auto;
+				color: black;
+				border-radius: 25px;
+				padding: 10px 10px;
+				/* border:2px solid black; */
+			  "
+			>
+			  <form method="POST" action="{{ url_for('crop_prediction') }}">
+				<div class="inp">
+				<div class="form-group">
+				  <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+				  <input
+					type="number"
+					class="form-control"
+					id="Nitrogen"
+					name="nitrogen"
+					placeholder="Enter the value (example:50)"
+					style="font-weight: bold"
+					required
+				  />
+				</div>
+				<div class="form-group">
+				  <label for="Phosphorous" style="font-size: 17px"
+					><b>Phosphorous</b></label
+				  >
+				  <input
+					type="number"
+					class="form-control"
+					id="Phosphorous"
+					name="phosphorous"
+					placeholder="Enter the value (example:50)"
+					style="font-weight: bold"
+					required
+				  />
+				</div>
+			
+				<div class="form-group">
+				  <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+				  <input
+					type="number"
+					class="form-control"
+					id="Pottasium"
+					name="pottasium"
+					placeholder="Enter the value (example:50)"
+					style="font-weight: bold"
+					required
+				  />
+				</div>
+				<div class="form-group">
+				  <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+				  <input
+					type="number"
+					step="0.01"
+					class="form-control"
+					id="ph"
+					name="ph"
+					placeholder="Enter the value"
+					style="font-weight: bold"
+					required
+				  />
+				</div>
+				<div class="form-group">
+				  <label for="State" style="font-size: 17px "><b>State</b></label>
+				  <select
+					onchange="print_city('state', this.selectedIndex);"
+					id="sts"
+					name="stt"
+					class="form-control"
+					style="font-weight: bold; color: black;"
+					
+					required
+				  ></select>
+				  <br />
+				  <label for="City" style="font-size: 17px;"><b>City</b></label>
+				  <select
+					id="state"
+					class="form-control"
+					name="city"
+					style="font-weight: bold; color: black;"
+					required
+				  ></select>
+				  <script language="javascript">
+					print_state("sts");
+				  </script>
+				  </div>
+				  <div class="form-group " >
+					<label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+					<input
+					  type="number"
+					  step="0.01"
+					  class="form-control"
+					  id="Rainfall"
+					  name="rainfall"
+					  placeholder="Enter the value"
+					  style="font-weight: bold"
+					  required
+					/>
+				  </div>
+				</div>
+				<div class="d-flex justify-content-center">
+					<button
+					  type="submit"
+					  class="btn"
+					  style="margin-top:20px;background-color:rgb(58, 249, 173);backcolor: black; font-weight: bold; width: 150px; height:50px; border-radius:40px; font-size: 21px;box-shadow: 2px 3px 5px black;"
+					>
+					  Predict
+					</button>
+				  </div>
+			  </form>
+				<div style="justify-content: center;" id="myDIV">
+					<h1 class="text-center"><b>Recommended plant:<i>{{ prediction }} </i></b></h1>
+				</div>
+			</div>
+			</div>		
+	</div>
+</section>
+</html>
+
+{% endblock %}
